@@ -5,7 +5,9 @@ import axios from "axios";
 const app = express();
 const OPENROUTER_KEY = "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";
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://forge-client-7y29.vercel.app', 'http://localhost:5173']
+}));
 app.use(express.json());
 
 const ask = async (prompt) => {
